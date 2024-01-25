@@ -29,11 +29,11 @@ class UserFixtures extends Fixture
         $permission->setObject("App\Controller\UserAccounts\RoleController");
 
         $user = new User();
-        $user->setFirstName("System");
+        $user->setFirstName("Winfrida");
         $user->setMiddleName("");
-        $user->setLastName("Admin");
+        $user->setLastName("Mwigilwa");
         $user->setAccountStatus("A");
-        $user->setEmail("michael@me.com");
+        $user->setEmail("winfridamwigilwa184@gmail.com");
         $user->setPassword($this->hasher->hashPassword($user,"123456"));
         $user->addRole($userRole);
 

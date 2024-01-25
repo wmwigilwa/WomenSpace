@@ -11,32 +11,10 @@ Accounts:
 
 
 Configuration:
-    ContentType:
-      roleClass: App\Controller\Configuration\ContentTypeController
+    Space:
+      roleClass: App\Controller\Configuration\SpaceController
       actions: [ "view","add","edit","delete" ]
-      key: content-type-configuration
-
-    FactType:
-      roleClass: App\Controller\Configuration\FactTypeController
-      actions: [ "view","add","edit","delete" ]
-      key: fact-type-configuration
-
-Location:
-    Region:
-      roleClass: App\Controller\Location\RegionController
-      actions: [ "view","add","edit","delete" ]
-      key: region-configuration
-
-    SubRegion:
-      roleClass: App\Controller\Location\SubRegionController
-      actions: [ "view","add","edit","delete" ]
-      key: sub-region-configuration
-
-    Country:
-      roleClass: App\Controller\Location\CountryController
-      actions: [ "view","add","edit","delete", "info" ]
-      key: country-configuration
-
+      key: space-configuration
 
 Data:
   CountryFacts:

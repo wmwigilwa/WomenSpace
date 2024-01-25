@@ -1,25 +1,26 @@
 <?php
 
-namespace App\Form\Location;
+namespace App\Form\Configuration;
 
-use App\Entity\Location\Region;
+use App\Entity\Configuration\Space;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class RegionType extends AbstractType
+class SpaceType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name')
+            ->add('title')
+            ->add('description')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Region::class,
+            'data_class' => Space::class,
         ]);
     }
 }

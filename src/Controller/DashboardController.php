@@ -17,27 +17,20 @@ class DashboardController extends AbstractController
      * @throws Exception
      */
     #[Route('/app/dashboard', name: 'app_dashboard')]
-    public function index(UserRepository $userRepository,
-                          CountryRepository $countryRepository,
-                          QuizRepository $quizRepository,
-                          CountryFactRepository $countryFactRepository
-
-    ): Response
+    public function index(UserRepository $userRepository): Response
     {
         $totals = [
             'users' => $userRepository->getTotals(),
-            'countries' => $countryRepository->getTotals(),
-            'quizzes' => $quizRepository->getTotals(),
-            'facts' => $countryFactRepository->getTotals(),
+            'countries' => 0,
+            'quizzes' => 0,
+            'facts' => 0,
         ];
-
-        $leaderBoards = $quizRepository->getCurrentLeaderBoards();
 
 
         return $this->render('dashboard/index.html.twig', [
             'controller_name' => 'DashboardController',
             'page_name'=>'Dashboard',
-            'leaderBoards'=>$leaderBoards,
+            'leaderBoards'=>[],
             'totals'=>$totals
         ]);
     }

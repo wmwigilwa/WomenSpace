@@ -1,0 +1,7 @@
+{{ form_start(form) }}
+    {{ form_row(form.title) }}
+    {{ form_row(form.description) }}
+<div class="px-3">
+    <button class="btn-primary">{{ button_label|default('Save') }}</button>
+</div>
+{{ form_end(form) }}

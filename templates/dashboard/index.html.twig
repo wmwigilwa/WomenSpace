@@ -1,0 +1,89 @@
+{% extends 'main/app.base.html.twig' %}
+
+
+{% block content %}
+    <div class="welcome-note mb-10">
+        <h1 class="text-3xl font-light">Welcome, {{ app.user.firstName }}</h1>
+        <div class="divider divider-left bg-green-600"></div>
+
+        <div class="grid xl:grid-cols-4 gap-10 mt-10">
+            <div class="bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-md shadow-sm border p-4 text-black h-[158px] block">
+                <span class="font-semibold text-white text-md">TOTAL USERS</span>
+                <div class="flex justify-between mt-3">
+                    <span class="text-white text-3xl font-light">{{ totals.users }}</span>
+                    <span class="inline-flex justify-center items-center w-[64px] h-[64px] rounded-full border-4 border-blue-100 bg-blue-200 text-blue-600">
+                             <i class="fa-solid fa-users text-3xl"></i>
+                    </span>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-red-600 to-red-400 text-white rounded-md shadow-sm border p-4 text-black h-[158px] block">
+                <span class="font-semibold text-md  text-white">TOTAL BLOCKED USERS</span>
+                <div class="flex justify-between mt-3">
+                    <span class="text-white text-3xl font-light">{{ totals.countries }}</span>
+                    <span class="inline-flex justify-center items-center w-[64px] h-[64px] rounded-full border-4 border-pink-100 bg-pink-200 text-pink-600">
+                        <i class="fa-solid fa-users text-3xl"></i>
+                    </span>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-green-600 to-green-400 text-white rounded-md shadow-sm border p-4 text-black h-[158px] block">
+                <span class="font-semibold text-md text-white">TOTAL ACITVE USERS</span>
+                <div class="flex justify-between mt-3">
+                    <span class="text-white text-3xl font-light">{{ totals.quizzes }}</span>
+
+                    <span class="inline-flex justify-center items-center w-[64px] h-[64px] rounded-full border-4 border-green-100 bg-green-200 text-green-600">
+                        <i class="fa-solid fa-users text-3xl"></i>
+                </span>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-orange-600 to-orange-400 text-white rounded-md shadow-sm border p-4 text-black h-[158px] block">
+                <span class="font-semibold text-md text-white">TOTAL TOPICS</span>
+                <div class="flex justify-between mt-3">
+                    <span class="text-white text-3xl font-light">{{ totals.facts }}</span>
+
+                    <span class="inline-flex justify-center items-center w-[64px] h-[64px] rounded-full border-4 border-orange-100 bg-orange-200 text-orange-600">
+                        <i class="fa-solid fa-database text-3xl"></i>
+                </span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="bg-white border shadow-sm rounded-xl">
+        <div class="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-3 md:px-4">
+            <p class="mt-1 text-sm text-gray-500 dark:text-gray-500">
+                Current Leaderboards
+            </p>
+        </div>
+
+        <div class="p-4 md:p-5">
+            <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700" id="data-grid">
+                <thead>
+                    <tr>
+                        <th class="py-4 px-6 number">#Rank</th>
+                        <th class="py-4 ps-6">User</th>
+                        <th class="py-4 pe-6 text-right">Points</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                        {%  for user in leaderBoards %}
+                            <tr>
+                                <td>{{ loop.index }}.</td>
+                                <td>{{ user.first_name}} {{ user.middle_name }} {{ user.last_name }}</td>
+                                <td class="text-right pe-6">{{ user.number_of_correct_answers*10 }}</td>
+                            </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
