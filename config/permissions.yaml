@@ -16,8 +16,7 @@ Configuration:
       actions: [ "view","add","edit","delete" ]
       key: space-configuration
 
-Data:
-  CountryFacts:
-    roleClass: App\Controller\Data\CountryFactController
-    actions: [ "view","add","edit","delete" ]
-    key: country-facts-data
+    Tag:
+      roleClass: App\Controller\Configuration\TagController
+      actions: [ "view","add","edit","delete" ]
+      key: tag-configuration

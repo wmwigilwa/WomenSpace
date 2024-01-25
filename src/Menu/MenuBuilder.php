@@ -43,7 +43,11 @@ class MenuBuilder
             ->addChild('Manage Spaces', ['route' => 'app_configuration_space_index'])
                 ->addChild('Add', ['route' => 'app_configuration_space_new'])->setDisplay(false)->getParent()
                 ->addChild('Edit', ['route' => 'app_configuration_space_edit'])->setDisplay(false)->getParent()
-                ->getParent();
+                ->getParent()
+            ->addChild('Manage Tags', ['route' => 'app_configuration_tag_index'])
+            ->addChild('Add', ['route' => 'app_configuration_tag_new'])->setDisplay(false)->getParent()
+            ->addChild('Edit', ['route' => 'app_configuration_tag_edit'])->setDisplay(false)->getParent()
+            ->getParent();
 
 
         $menu->addChild('System users', ['uri' => '#', 'extras'=>['icon'=>'users']])
