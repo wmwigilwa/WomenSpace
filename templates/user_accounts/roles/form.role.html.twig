@@ -1,0 +1,30 @@
+<div class="form-wizard">
+    {% set stepCounter=0 %}
+    <div class="permission-form">
+        {{ form_start(form) }}
+        {{ form_row(form.role.roleName) }}
+        {% for key,value in permissions %}
+            {% set stepCounter=0 %}
+            <h3 class="role-header mb-3 font-semibold">{{ key }} Permissions</h3>
+            <div class="divider divider-left"></div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                {% for item in value %}
+                    <div class="col-md-4 mt-2">
+                        {%  set stepCounter=stepCounter+1 %}
+                        <fieldset class="flex gap-x-6 border-2 p-3" style="min-height: 120px; margin-bottom: 20px">
+                            <legend class="w-auto pt-2 font-semibold italic">
+                                {{ form_label(attribute(form, item.key)) }}
+                            </legend>
+                            {{ form_widget(attribute(form, item.key))  }}
+                        </fieldset>
+                    </div>
+
+                {% endfor %}
+            </div>
+
+        {% endfor %}
+        <button type="submit" class="btn-primary" formnovalidate>Save</button>
+        {{ form_end(form) }}
+    </div>
+
+</div>

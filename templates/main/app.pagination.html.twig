@@ -1,0 +1,44 @@
+{%- extends '@Pagerfanta/default.html.twig' -%}
+
+{%- block pager_widget -%}
+    <nav class="flex items-center space-x-2">
+        {{- block('pager') -}}
+    </nav>
+{%- endblock pager_widget -%}
+
+{%- block page_link -%}
+    <a class="w-10 h-10 text-gray-500 hover:text-blue-600 p-4 inline-flex items-center text-sm font-medium rounded-full" href="{{- path -}}">{{- page -}}</a>
+{%- endblock page_link -%}
+
+{%- block current_page_link -%}
+    <a class="w-10 h-10 bg-blue-500 text-white p-4 inline-flex items-center text-sm font-medium rounded-full" href="#" aria-current="page">
+      {{- page -}}
+    </a>
+{%- endblock current_page_link -%}
+
+{%- block previous_page_link -%}
+    <span aria-hidden="true">«</span>
+    <a class="page-link" href="{{- path -}}" rel="prev">{{- block('previous_page_message') -}}</a>
+{%- endblock previous_page_link -%}
+
+{%- block previous_page_link_disabled -%}
+    <a class="text-gray-400 p-4 inline-flex items-center gap-2 rounded-md pointer-events-none">
+        <span aria-hidden="true">«</span>
+        {{- block('previous_page_message') -}}
+    </a>
+{%- endblock previous_page_link_disabled -%}
+
+{%- block next_page_link -%}
+    <a class="page-link" href="{{- path -}}" rel="next">{{- block('next_page_message') -}}</a>
+{%- endblock next_page_link -%}
+
+{%- block next_page_link_disabled -%}
+    <a class="text-gray-400 p-4 inline-flex items-center gap-2 rounded-md pointer-events-none">
+        {{- block('next_page_message') -}}
+        <span aria-hidden="true">»</span>
+    </a>
+{%- endblock next_page_link_disabled -%}
+
+{%- block ellipsis -%}
+    <span class="page-link">&hellip;</span>
+{%- endblock ellipsis -%}

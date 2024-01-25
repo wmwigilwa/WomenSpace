@@ -1,0 +1,131 @@
+@import '~@fortawesome/fontawesome-free/css/all.css';
+@import 'leaflet';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .btn-primary {
+        @apply py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800;
+    }
+    .btn-warning {
+        @apply py-2 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-yellow-500 text-white hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800
+    }
+    .btn-danger {
+        @apply py-2 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-red-500 text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800
+    }
+    .btn-neutral {
+        @apply py-2 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-neutral-500 text-white hover:bg-neutral-600 focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800
+    }
+    [type="checkbox"]{
+        @apply shrink-0 mt-0.5 mr-2.5 border-gray-200 rounded text-blue-600 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800
+    }
+    [type='file'] {
+        @apply block w-full border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 file:bg-transparent file:border-0 file:bg-gray-100 file:mr-4 file:py-3 file:px-4 dark:file:bg-gray-700 dark:file:text-gray-400;
+    }
+
+}
+
+body {
+    background-color: white;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+div.landing {
+    background: #0f172a url("../images/backgrounds/hero.webp");
+    background-position-y: 50%;
+    background-size: cover;
+}
+
+img.app-logo {
+    height: 30px;
+}
+
+img.login-logo {
+    width:200px;
+}
+
+table#data-grid{
+    text-align: left;
+    border-collapse: collapse;
+    font-size:0.9em;
+}
+
+table#data-grid td{
+    border:1px solid #E5E7EB;
+    border-collapse: collapse;
+    padding:12px 10px;
+}
+
+table#data-grid tr.odd{
+    background-color: #FBFCFD;
+}
+
+table#data-grid tbody tr:hover{
+    background: #f3f7f9;
+    cursor:default;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+table#data-grid th{
+    border: 1px solid #E7ECF1;;
+    border-bottom:2px solid #E7ECF1;
+}
+
+table#data-grid th.sort-both{
+    background: url("../images/icons/sort_both.png") no-repeat center right;
+}
+
+table#data-grid th.sort-asc{
+    background: url("../images/icons/sort_asc.png") no-repeat center right;
+}
+
+table#data-grid th.sort-desc{
+    background: url("../images/icons/sort_desc.png") no-repeat center right;
+}
+
+table#data-grid th.number{
+    width:50px;
+}
+
+table#data-grid a.link{
+    text-decoration: none;
+    color:#5B9BD1;
+}
+
+table#data-grid a.link:hover{
+    text-decoration: underline;
+}
+
+table#data-grid th a,table#data-grid th span{
+    text-decoration: none;
+    color:#3C475F;
+    display: block;
+    padding:15px 10px;
+}
+
+div.divider {
+    width: 50px;
+    height: 3px;
+    margin: 15px auto;
+}
+
+div.divider-left {
+    margin: 15px 0;
+}
+
+div.login-cover{
+    background-image: url('../images/backgrounds/hero.webp');
+    background-size: cover;
+}
+
+li.selected {
+    @apply bg-purple-100;
+}

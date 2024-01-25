@@ -1,0 +1,45 @@
+Accounts:
+    FrontEndUsers:
+      roleClass: App\Controller\UserAccounts\UserController
+      actions: ["view","add","edit","delete","info","approve","decline"]
+      key: users-accounts
+
+    Roles:
+      roleClass: App\Controller\UserAccounts\RoleController
+      actions: ["view","add","edit","delete"]
+      key: role-configuration
+
+
+Configuration:
+    ContentType:
+      roleClass: App\Controller\Configuration\ContentTypeController
+      actions: [ "view","add","edit","delete" ]
+      key: content-type-configuration
+
+    FactType:
+      roleClass: App\Controller\Configuration\FactTypeController
+      actions: [ "view","add","edit","delete" ]
+      key: fact-type-configuration
+
+Location:
+    Region:
+      roleClass: App\Controller\Location\RegionController
+      actions: [ "view","add","edit","delete" ]
+      key: region-configuration
+
+    SubRegion:
+      roleClass: App\Controller\Location\SubRegionController
+      actions: [ "view","add","edit","delete" ]
+      key: sub-region-configuration
+
+    Country:
+      roleClass: App\Controller\Location\CountryController
+      actions: [ "view","add","edit","delete", "info" ]
+      key: country-configuration
+
+
+Data:
+  CountryFacts:
+    roleClass: App\Controller\Data\CountryFactController
+    actions: [ "view","add","edit","delete" ]
+    key: country-facts-data

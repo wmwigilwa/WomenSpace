@@ -1,0 +1,11 @@
+<td>{{ counter }}</td>
+<td>{{ record.email }}</td>
+<td>{{ record.first_name }} {{ record.last_name }}</td>
+<td>{{ record.roles }}</td>
+<td>{% if record.status=='A' %}
+        <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-green-500 text-white">ACTIVE</span>
+        {% elseif record.status=='B'%}
+        <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-red-500 text-white">BLOCKED</span>
+        {% endif %}
+</td>
+

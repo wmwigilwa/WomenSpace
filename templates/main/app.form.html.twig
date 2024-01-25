@@ -1,0 +1,37 @@
+{% extends 'main/app.base.html.twig' %}
+
+
+{% block content %}
+
+    {% include 'main/app.breadcrumb.html.twig' %}
+
+    <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7]">
+        <div class="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-3 md:px-4 dark:bg-gray-800 dark:border-gray-700">
+            <p class="mt-1 text-sm text-gray-500 dark:text-gray-500">
+                {{ page_name }}
+            </p>
+        </div>
+
+        <div class="p-4 md:p-5">
+
+            <div class="flex flex-col">
+                <div class="{% if isFullWidth is defined %}col12 {% else %}col6{% endif %} user-form">
+                    {% include formTemplate %}
+                </div>
+                {% if secondaryFormTemplate is defined %}
+                    <div class="col6 last user-form">
+                        {% include secondaryFormTemplate %}
+                    </div>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}
+
+{% block javascripts %}
+     {{ parent() }}
+{% endblock %}
+
