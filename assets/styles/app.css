@@ -7,7 +7,7 @@
 
 @layer components {
     .btn-primary {
-        @apply py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800;
+        @apply py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-green-500 text-white hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800;
     }
     .btn-warning {
         @apply py-2 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-yellow-500 text-white hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800
@@ -128,4 +128,8 @@ div.login-cover{
 
 li.selected {
     @apply bg-purple-100;
+}
+
+div.custom-container {
+   @apply max-w-[85rem] w-full mx-2 py-3 px-4 md:py-0 md:px-6 lg:px-8 xl:mx-auto;
 }

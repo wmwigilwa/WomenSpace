@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+
+<title>New Topic</title>
+
+{% block body %}
+    <h1>Create new Topic</h1>
+
+    {{ include('forum/topic/_form.html.twig') }}
+
+    <a href="{{ path('app_forum_topic_index') }}">back to list</a>
+{% endblock %}

@@ -77,10 +77,9 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator implements  
             );
         } else {
             return new RedirectResponse(
-                $this->router->generate('app_quiz_home')
+                $this->router->generate('app_forum_home')
             );
         }
-
     }
 
     /**

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<title>Topic</title>
+
+{% block body %}
+    <h1>Topic</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ topic.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ topic.title }}</td>
+            </tr>
+            <tr>
+                <th>Body</th>
+                <td>{{ topic.body }}</td>
+            </tr>
+            <tr>
+                <th>DateCreated</th>
+                <td>{{ topic.dateCreated ? topic.dateCreated|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_forum_topic_index') }}">back to list</a>
+
+    <a href="{{ path('app_forum_topic_edit', {'id': topic.id}) }}">edit</a>
+
+    {{ include('forum/topic/_delete_form.html.twig') }}
+{% endblock %}
