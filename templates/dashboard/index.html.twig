@@ -51,39 +51,7 @@
         </div>
 
     </div>
-
-    <div class="bg-white border shadow-sm rounded-xl">
-        <div class="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-3 md:px-4">
-            <p class="mt-1 text-sm text-gray-500 dark:text-gray-500">
-                Current Leaderboards
-            </p>
-        </div>
-
-        <div class="p-4 md:p-5">
-            <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700" id="data-grid">
-                <thead>
-                    <tr>
-                        <th class="py-4 px-6 number">#Rank</th>
-                        <th class="py-4 ps-6">User</th>
-                        <th class="py-4 pe-6 text-right">Points</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                        {%  for user in leaderBoards %}
-                            <tr>
-                                <td>{{ loop.index }}.</td>
-                                <td>{{ user.first_name}} {{ user.middle_name }} {{ user.last_name }}</td>
-                                <td class="text-right pe-6">{{ user.number_of_correct_answers*10 }}</td>
-                            </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-
-        </div>
-    </div>
 {% endblock %}
-
 {% block javascripts %}
     {{ parent() }}
 {% endblock %}
